@@ -43,33 +43,8 @@
     
 
     <!-- SITE CONTENT -->
-    <div class="wrapper">
-
-        <div class="cont">
-            <section class="portfolio-single type-1 top_90">
-                <figure class="hero-image">
-                    <img src="http://tavonline.net/html/gorge2/dark/images/portfolio/work-1/01.jpg" alt="">
-                </figure>
-                <ul class="information">
-                    <li><span>Author:</span>{{Author}}</li>
-                    <li><span>Date:</span>{{Date}}</li>
-                    <li><span>Title:</span>{{Title}}</li>
-                    <li><span>Category:</span>{{Category}}</li>
-                </ul>
-                <h1 class="title bottom_15">{{Description title}}</h1>
-                <p>{{Content}}</p>
-
-                
-                <div class="col-md-12 portfolio-nav text-center top_90">
-                    <a class="port-next" href="work-2.html">
-                        <div class="nav-title">next</div>
-                        <div class="next-title">{{Next}}</div>
-                    </a>
-                </div>
-
-            </section>
-
-        </div> <!-- cont end -->
+    <div class="wrapper" id="wrapper">
+       {{template}}
     </div> <!-- wrapper end -->
 
     <footer>
@@ -106,11 +81,10 @@
     <script src="twitter-api/tweetie.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/main.js"></script>
-    <!-- for color alternatives -->
-    <script src="js/jquery.cookie-1.4.1.min.js"></script>
-    <script src="js/Demo.js"></script>
-    <link rel="stylesheet" href="css/Demo.min.css" />
+    <!--handlebars-->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
+    <script src="js/main.js"></script>
+    <script src="js/template.js"></script>
 </body>
 </html>
