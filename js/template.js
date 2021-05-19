@@ -17,6 +17,7 @@ $(document).ready( () => {
         if(data!=null){
             console.log("resp",data);
             jsonData = Object.assign(jsonData,data.display);
+            jsonData.nexturl = window.location.href+"?token="+data.next;
         }
     })
     console.log('params',new URLSearchParams(window.location.search));
