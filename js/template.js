@@ -16,6 +16,7 @@ $(document).ready( () => {
     }).done((data)=>{
         if(data!=null){
             console.log("resp",data);
+            jsonData = Object.assign(jsonData,data.display);
         }
     })
     console.log('params',new URLSearchParams(window.location.search));
