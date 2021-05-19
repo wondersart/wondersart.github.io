@@ -13,11 +13,11 @@ $(document).ready( () => {
     $.ajax({
         url:'https://api.wonders.art/v1/token/0',
         contentType: "application/json",
-    }).done((data)=>{
-        if(data!=null){
-            console.log("resp",data);
-            jsonData = Object.assign(jsonData,data.display);
-            jsonData.nexturl = window.location.href+"?token="+data.next;
+    }).done((rsp)=>{
+        if(rsp!=null && rsp.data!=null){
+            console.log("resp",rsp.data);
+            jsonData = Object.assign(jsonData,rsp.data.display);
+            jsonData.nexturl = window.location.href+"?token="+rsp.data.next;
         }
     })
     console.log('params',new URLSearchParams(window.location.search));
