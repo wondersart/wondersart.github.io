@@ -10,19 +10,22 @@ $(document).ready( () => {
         "next":"Next Work",
         "nexturl":"gallery.html?token=2"
     };
+    let p = new URLSearchParams(window.location.search)
+    console.log('tkn',p.get("token"));
+    let tkn = p.get('token')||'0';
     $.ajax({
-        url:'https://api.wonders.art/v1/token/0',
+        url:'https://api.wonders.art/v1/token/'+tkn,
         contentType: "application/json",
     }).done((rsp)=>{
         if(rsp!=null && rsp.data!=null){
-            console.log("resp",rsp.data);
             jsonData = Object.assign(jsonData,rsp.data.display);
+            console.log("merged",jsonData);
             jsonData.nexturl = window.location.href+"?token="+rsp.data.next;
         }
     })
-    console.log('params',new URLSearchParams(window.location.search));
+
     $.get('templates/gallery.hbs',  (data) => {
-        var template=Handlebars.compile(data);
+        let template = Handlebars.compile(data);
         $('#wrapper').html(template(jsonData));
     }, 'html');
 });
