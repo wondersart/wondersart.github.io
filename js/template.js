@@ -22,11 +22,11 @@ $(document).ready( () => {
             console.log("merged",jsonData);
             jsonData.nexturl = window.location.href.split('?')[0]+"?token="+rsp.data.next;
 
-            $.get('templates/gallery.hbs',  (data) => {
-                let template = Handlebars.compile(data);
-                $('#wrapper').html(template(jsonData));
-            }, 'html');
         }
+        $.get('templates/gallery.hbs',  (data) => {
+            let template = Handlebars.compile(data);
+            $('#wrapper').html(template(jsonData));
+        }, 'html');
     })
 
 
