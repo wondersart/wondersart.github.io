@@ -20,7 +20,7 @@ $(document).ready( () => {
         if(rsp!=null && rsp.data!=null){
             jsonData = Object.assign(jsonData,rsp.data.display);
             console.log("merged",jsonData);
-            jsonData.nexturl = window.location.href+"?token="+rsp.data.next;
+            jsonData.nexturl = window.location.href.split('?')[0]+"?token="+rsp.data.next;
         }
     })
 
