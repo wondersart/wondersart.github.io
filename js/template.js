@@ -19,7 +19,6 @@ $(document).ready( () => {
     }).done((rsp)=>{
         if(rsp!=null && rsp.data!=null){
             jsonData = Object.assign(jsonData,rsp.data.display);
-            console.log("merged",jsonData);
             jsonData.nexturl = window.location.href.split('?')[0]+"?token="+rsp.data.next;
 
         }
